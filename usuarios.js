@@ -258,3 +258,5 @@ async function deletarUsuario(id) {
   alert('Usuário excluído com sucesso!');
   listarUsuarios();
 }
+
+
