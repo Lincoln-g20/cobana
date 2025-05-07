@@ -23,10 +23,10 @@ async function carregarExtrato(usuarioId) {
       <thead>
         <tr>
           <th>Data</th>
-          <th>Produto</th>
+          <th>Item</th>
           <th>Qtd</th>
-          <th>Unitário</th>
-          <th>Subtotal</th>
+          <th>UN</th>
+          <th>Parcial</th>
         </tr>
       </thead>
       <tbody>
