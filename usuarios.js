@@ -70,17 +70,36 @@ function renderizarUsuarios(data, filtro) {
 }
 
 function exibirCamposEdicao(id) {
-  // Ocultar a lista e exibir os campos de edição do usuário selecionado
-  const painelConteudo = document.getElementById('painel-conteudo');
-  painelConteudo.innerHTML = `
-    <h3>Editar Usuário</h3>
-    <input type="text" id="nome-${id}" placeholder="Nome" disabled>
-    <input type="password" id="senha-${id}" placeholder="Nova senha">
-    <input type="password" id="confirmar-senha-${id}" placeholder="Confirmar nova senha">
-    <button onclick="salvarAlteracoes(${id})">Salvar</button>
-    <button onclick="deletarUsuario(${id})" class="btn-excluir">Excluir</button>
-    <button onclick="listarUsuarios()">Voltar</button>
-  `;
+  // Buscar o usuário para obter o nome
+  supabase.from('usuarios')
+    .select('nome')
+    .eq('id', id)
+    .single()
+    .then(({ data, error }) => {
+      if (error) {
+        console.error('Erro ao buscar o nome do usuário:', error);
+        alert('Erro ao carregar o nome do usuário.');
+        return;
+      }
+
+      // Obter o nome do usuário
+      const nomeUsuario = data.nome;
+
+      // Ocultar a lista e exibir os campos de edição do usuário selecionado
+      const painelConteudo = document.getElementById('painel-conteudo');
+      painelConteudo.innerHTML = `
+        <h3>Editar Usuário</h3>
+        <input type="text" id="nome-${id}" placeholder="Nome" value="${nomeUsuario}">
+        <input type="password" id="senha-${id}" placeholder="Nova senha">
+        <input type="password" id="confirmar-senha-${id}" placeholder="Confirmar nova senha">
+        <button onclick="salvarAlteracoes(${id})">Salvar</button>
+        <button onclick="deletarUsuario(${id})" class="btn-excluir">Excluir</button>
+        <button onclick="listarUsuarios()">Voltar</button>
+      `;
+    })
+    .catch(error => {
+      console.error('Erro ao carregar usuário para edição:', error);
+    });
 }
 
 function atualizarBotaoLimpar(filtro) {
@@ -140,6 +159,7 @@ async function adicionarUsuario() {
   const { error } = await supabase
       .from('usuarios')
       .insert([{ nome, senha, tipo }]);
+
 
   if (error) {
       console.error('Erro ao adicionar usuário:', error);
