@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projeto Cobana — Extrato do Bar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGO CENTRALIZADA -->
+  <div id="topo-logo">
+    <img src="img/cobana.jpg" alt="Logo Cobana" id="logo-img" />
+  </div>
+
+  <!-- LOGIN -->
+  <div id="login-container" class="container">
+    <h2>Login</h2>
+    <input type="text" id="nome" placeholder="Nome">
+    <input type="password" id="senha" placeholder="Senha">
+    <button onclick="login()">Entrar</button>
+    <p id="erro" style="color:red;"></p>
+  </div>
+
+  <!-- PAINEL ADMIN -->
+  <div id="admin-container" class="container" style="display:none;">
+    <h2>Painel de Administração</h2>
+    <button onclick="logout()" style="float:right; background-color: #e74c3c;">Logout</button>
+    <button onclick="abrirGerenciarUsuarios()">Gerenciar Usuários</button>
+    <button onclick="abrirGerenciarProdutos()">Gerenciar Produtos</button>
+    <button onclick="abrirGerenciarExtratos()">Gerenciar Extratos</button>
+    <div id="painel-conteudo" style="margin-top: 20px;"></div>
+  </div>
+
+  <!-- CONTAINER USUÁRIO -->
+  <div id="usuario-container" class="container" style="display:none;">
+    <h2>Bem-vindo, <span id="cliente-nome"></span>!</h2>
+    <button onclick="logout()" style="float:right; background-color: #e74c3c;">Logout</button>
+    <h3>Seu Extrato:</h3>
+    
+    <div class="tabela-extratos-wrapper">
+      <ul id="extrato-lista"></ul>
+    </div>
+
+    <h3>Total: R$ <span id="total">0.00</span></h3>
+  </div>
+
+  <!-- Supabase SDK e scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="auth.js"></script>
+  <script src="admin.js"></script>
+  <script src="usuarios.js"></script>
+  <script src="produtos.js"></script>
+  <script src="extratos_admin.js"></script>
+  <script src="extratos_user.js"></script>
+
+</body>
+<!-- FOOTER -->
+<footer id="rodape">
+  <p>Site desenvolvido por André Lincoln — "Transformando ideias em soluções simples."</p>
+</footer>
+
+</html>

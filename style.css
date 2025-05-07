@@ -1,0 +1,294 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Estilo geral */
+body {
+  background-color: #f9fafb;
+  padding: 20px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  background-color: #ffffff;
+}
+
+/* Cabeçalhos */
+h2, h3, h4 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #7f8c8d;
+}
+
+/* Inputs e botões */
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f7f7f7;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #3498db;
+  background-color: #fff;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Botões especiais */
+.btn-voltar {
+  background-color: #bdc3c7;
+  color: #2c3e50;
+}
+
+.btn-voltar:hover {
+  background-color: #95a5a6;
+}
+
+.btn-sair {
+  background-color: #e74c3c;
+}
+
+.btn-sair:hover {
+  background-color: #c0392b;
+}
+
+.btn-excluir {
+  background-color: #e74c3c;
+  margin-left: 10px;
+}
+
+.btn-excluir:hover {
+  background-color: #c0392b;
+}
+
+.btn-salvar {
+  background-color: #2ecc71;
+}
+
+.btn-salvar:hover {
+  background-color: #27ae60;
+}
+
+/* Tabelas */
+.tabela-usuarios,
+.tabela-extratos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabela-usuarios th,
+.tabela-extratos th,
+.tabela-usuarios td,
+.tabela-extratos td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.tabela-usuarios th,
+.tabela-extratos th {
+  background-color: #f0f3f4;
+  font-weight: bold;
+  color: #333;
+}
+
+.tabela-usuarios td,
+.tabela-extratos td {
+  font-size: 14px;
+}
+
+.tabela-usuarios td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tabela-extratos th,
+.tabela-extratos td {
+  border-color: #ccc;
+}
+
+/* Listas de extrato */
+.extrato-lista {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.extrato-lista li {
+  background-color: #ecf0f1;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Filtros de busca */
+.filtro-nome {
+  width: 250px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  background-color: #f7f7f7;
+}
+
+.btn-limpar-filtro {
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 10px 16px;
+  font-size: 16px;
+}
+
+.btn-limpar-filtro:hover {
+  background-color: #7f8c8d;
+}
+
+/* Lista de usuários */
+.lista-usuarios {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lista-usuarios li {
+  background-color: #ecf0f1;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lista-usuarios button {
+  background-color: #3498db;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.lista-usuarios button:hover {
+  background-color: #2980b9;
+}
+
+/* Campos de edição de usuário */
+.editar-usuario {
+  display: none;
+  margin-top: 15px;
+}
+
+.editar-usuario input {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.editar-usuario button {
+  background-color: #2ecc71;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.editar-usuario button:hover {
+  background-color: #27ae60;
+}
+#topo-logo {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#logo-img {
+  width: 150px;
+  height: auto;
+}
+
+#rodape {
+  text-align: center;
+  margin-top: 40px;
+  padding: 15px;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+/* Estilo para o botão de logout */
+.btn-logout {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-logout:hover {
+  background-color: #c0392b;
+}
+
+
