@@ -134,6 +134,7 @@ function abrirGerenciarProdutos() {
       return;
     }
   
+    
     alert('Produto excluído com sucesso!');
     listarProdutos();
   }
